@@ -1,0 +1,15 @@
+int valor = 0;
+void setup() {
+  pinMode(A0, INPUT);
+  pinMode(3, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+
+  valor = analogRead(A0);
+  Serial.print(valor);
+  analogWrite(3, map(valor, 0 , 1023, 0 , 155));
+  delay(100);
+
+}
